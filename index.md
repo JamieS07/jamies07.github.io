@@ -1,12 +1,13 @@
 ---
-layout: default
-title: Jamie S
+layout: home
+title: Welcome
 ---
 
-# Welcome to My Tech Blog
+# Hi, I'm Jamie
 
-I'm Jamie, an IT professional passionate about technology and development. Here, I share insights, tutorials, and experiences from my journey in the tech world.
+I'm an IT professional handling everything from infrastructure to bespoke software development. This is my blog where I share tips, tools, and tech breakdowns.
 
 ## Contact Me
 
-Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile) or [Email](mailto:your.email@example.com).
+- [LinkedIn](https://linkedin.com/in/your-profile)
+- [Email](mailto:youremail@example.com)
