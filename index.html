@@ -6,84 +6,20 @@
   <title>Jamie S | IT Blog & Advice</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #0f172a;
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    nav {
-      background: #1e293b;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    section {
-      background: white;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      color: #1e293b;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    input, textarea, button {
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-    }
-    button {
-      background-color: #3b82f6;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-      border: none;
-    }
-    button:hover {
-      background-color: #2563eb;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
+    body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; margin: 0; padding: 0; }
+    header { background: #0f172a; color: #fff; padding: 3rem 1rem; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin-top: .5rem; font-size: 1.2rem; }
+    nav { background: #1e293b; display: flex; justify-content: center; gap: 2rem; padding: 1rem; }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; }
+    main { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+    section { background: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h2 { color: #1e293b; }
+    form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+    input, textarea, button { padding: .8rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; font-family: 'Inter', sans-serif; }
+    button { background: #3b82f6; color: #fff; font-weight: 600; cursor: pointer; border: none; transition: background .3s; }
+    button:hover { background: #2563eb; }
+    footer { text-align: center; padding: 1rem; font-size: .9rem; color: #666; }
   </style>
 </head>
 <body>
@@ -102,29 +38,42 @@
   <main>
     <section>
       <h2>👋 Welcome</h2>
-      <p>I'm an IT tech running things solo — from system support to software development. This blog is where I share practical advice, tutorials, and tools that help me (and hopefully you) stay on top of it all.</p>
+      <p>I'm an IT tech running things solo—from system support to software development. This blog is where I share practical advice, tutorials, and tools that help me (and hopefully you) stay on top of it all.</p>
     </section>
 
     <section>
       <h2>📬 Contact Me</h2>
-<form action="https://formspree.io/f/myzerwjd" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-
-  <!-- This tells Formspree where to redirect on success -->
-  <input type="hidden" name="_next" value="https://jamies07.github.io/thanks.html" />
-
-  <button type="submit">Send Message</button>
-</form>
-
-</form>
-
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </section>
   </main>
 
   <footer>
     © 2025 Jamie S — Built with 💻 + ☕
   </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      const res = await fetch('https://formspree.io/f/myzerwjd', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        window.location.href = 'thanks.html';
+      } else {
+        alert('Oops! There was a problem submitting your form.');
+      }
+    });
+  </script>
 </body>
 </html>
