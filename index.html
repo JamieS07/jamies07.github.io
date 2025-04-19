@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jamie S | Tech Blog & IT Portfolio</title>
+  <title>Jamie S | IT Blog & Advice</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
     body {
+      font-family: 'Inter', sans-serif;
       background-color: #f9f9f9;
       color: #333;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
     header {
       background-color: #0f172a;
       color: white;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
     }
     nav {
       background: #1e293b;
@@ -39,51 +43,53 @@
       max-width: 800px;
       margin: 2rem auto;
       padding: 1rem;
-      background-color: white;
+    }
+    section {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    h1, h2 {
+    h2 {
       color: #1e293b;
     }
-    a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
     form {
-      margin-top: 2rem;
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
+      margin-top: 1rem;
     }
     input, textarea, button {
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      padding: 0.8rem;
       font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
     }
     button {
       background-color: #3b82f6;
       color: white;
-      border: none;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background 0.3s;
+      border: none;
     }
     button:hover {
       background-color: #2563eb;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Jamie S</h1>
-    <p>IT Professional | Developer | Tech Blogger</p>
+    <p>Solo IT Tech • Web Dev • Blog Writer</p>
   </header>
 
   <nav>
@@ -91,41 +97,28 @@
     <a href="blogs.html">Blog Posts</a>
     <a href="tips.html">Tech Tips</a>
     <a href="guides.html">Guides</a>
-    <a href="#contact">Contact</a>
   </nav>
 
   <main>
     <section>
-      <h2>Welcome</h2>
-      <p>
-        I'm Jamie, a dedicated IT tech managing infrastructure, support, and building bespoke software solutions. This blog is where I share practical tech knowledge, code snippets, and career insights.
-      </p>
+      <h2>👋 Welcome</h2>
+      <p>I'm an IT tech running things solo — from system support to software development. This blog is where I share practical advice, tutorials, and tools that help me (and hopefully you) stay on top of it all.</p>
     </section>
 
     <section>
-      <h2>Recent Post</h2>
-      <article>
-        <h3>Welcome to My Blog</h3>
-        <p>Posted on April 19, 2025</p>
-        <p>
-          This is my first blog post! I’ll be posting walkthroughs, advice, and lessons I’ve learned as a solo tech lead. Whether you're new to IT or deep in the dev world, I hope you find something useful here.
-        </p>
-      </article>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Me</h2>
+      <h2>📬 Contact Me</h2>
       <form action="https://formspree.io/f/myzerwjd" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="hidden" name="_next" value="thanks.html" />
         <button type="submit">Send Message</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Jamie S. Built with GitHub Pages.</p>
+    © 2025 Jamie S — Built with 💻 + ☕
   </footer>
 </body>
 </html>
