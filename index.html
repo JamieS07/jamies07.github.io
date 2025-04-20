@@ -6,7 +6,6 @@
   <title>Jamie S | IT Blog & Advice</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* General Styles */
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f9f9f9;
@@ -66,86 +65,6 @@
       background: #1e293b;
       color: white;
     }
-
-    /* Button Styles */
-    .contact-btn {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background-color: #3b82f6;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      padding: 1rem;
-      font-size: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .contact-btn:hover {
-      background-color: #2563eb;
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    .modal-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      width: 400px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      position: relative;
-    }
-    .close-btn {
-      background: transparent;
-      border: none;
-      color: #333;
-      font-size: 1.5rem;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    }
-
-    /* Minimized Form Styles */
-    .minimized-form {
-      display: none;
-      background: #fff;
-      padding: 1rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 250px;
-      text-align: center;
-      font-size: 1rem;
-      color: #333;
-    }
-    .minimized-form button {
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .minimized-form button:hover {
-      background: #2563eb;
-    }
   </style>
 </head>
 <body>
@@ -167,71 +86,10 @@
       <h2>👋 Welcome</h2>
       <p>I'm an IT tech running things solo—from system support to software development. This blog is where I share practical advice, tutorials, and tools that help me (and hopefully you) stay on top of it all.</p>
     </section>
-
-    <section>
-      <h2>📬 Contact Me</h2>
-      <p>If you have any questions or want to get in touch, feel free to contact me using the form below.</p>
-    </section>
   </main>
 
   <footer>
     © 2025 Jamie S — Built with 💻 + ☕
   </footer>
-
-  <!-- Minimized Form Button -->
-  <div class="minimized-form" id="minimizedForm">
-    <p>Contact Me</p>
-    <button onclick="openModal()">Open Form</button>
-  </div>
-
-  <!-- Contact Button -->
-  <button class="contact-btn" onclick="openModal()">💬</button>
-
-  <!-- Modal Form -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">×</button>
-      <h3>Contact Me</h3>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    // Function to open the modal
-    function openModal() {
-      document.getElementById('contactModal').style.display = 'flex';
-      document.getElementById('minimizedForm').style.display = 'none';  // Hide minimized form
-    }
-
-    // Function to close the modal
-    function closeModal() {
-      document.getElementById('contactModal').style.display = 'none';
-      document.getElementById('minimizedForm').style.display = 'block'; // Show minimized form again
-    }
-
-    // Form submission handling
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-
-      const res = await fetch('https://formspree.io/f/myzerwjd', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (res.ok) {
-        window.location.href = 'thanks.html';
-      } else {
-        alert('Oops! There was a problem submitting your form.');
-      }
-    });
-  </script>
 </body>
 </html>
